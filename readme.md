@@ -1,6 +1,6 @@
 # CI/CD 
 
-1) How to create the CI/CD pipeline in this repo i will learn for that i will using my existing portfolio website which is made in single html page.
+1) How to create the CI/CD pipeline in this repository i will learn, and  for that i am using my existing portfolio website which is made in single html page.
 
 2) for this i am using GitHub Actions tool to run this CI integration process and which is inbuilt in the github so github action is easy to perform the CI(continous integration).
 
@@ -13,10 +13,11 @@
   # common command like 
 
    git init
+   git add .
    git commit -m "first commit"
    git remote add origin "url"
    git branch -M main
-   git -u push main
+   git push -u origin main
 
 2) after we push the code to the github then we have to manually build our code before we deploy the code to the production means we cannot direct push the changes and the code to the live project.
 
