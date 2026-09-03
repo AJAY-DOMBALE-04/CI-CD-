@@ -23,4 +23,6 @@
 
 3) after the build is success full then we can do the deployment and the code is deploy to the live  project but this whole process is manaully done and takes time and here we can make this process automate using the two process CI(continous integration which will build our code and check all the test case which we have set and if all the test case are pass by the code then only hte code sent ot the deployment if the test case fail then it shows error in the github which is easy for us to look specifically where the integration error has happen so no need manually build and check the test case ).
 
-4)
+4) when the CI (continous integration) part is done it automatically test the code with the test case which we have set and  build the code and then the CD( continous deployment) part comes which automatically when all the test are pass and the code is build the CD deploy the code to the production means to the live project so the compate process ia automated.
+
+5) to perform this process of CI/CD i am the in build tool github action which is used to CREATE THE CI ( continous integration part ) and the CD (continous deploment part)
