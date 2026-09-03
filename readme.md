@@ -25,4 +25,4 @@
 
 4) when the CI (continous integration) part is done it automatically test the code with the test case which we have set and  build the code and then the CD( continous deployment) part comes which automatically when all the test are pass and the code is build the CD deploy the code to the production means to the live project so the compate process ia automated.
 
-5) to perform this process of CI/CD i am the in build tool github action which is used to CREATE THE CI ( continous integration part ) and the CD (continous deploment part)
+5) to perform this process of CI/CD i am the in build tool github action which is used to create THE CI ( continous integration part ) and the CD (continous deployment part)
