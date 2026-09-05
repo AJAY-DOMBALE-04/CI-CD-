@@ -1,28 +1,191 @@
-# CI/CD 
+# CI/CD
 
-1) How to create the CI/CD pipeline in this repository i will learn, and  for that i am using my existing portfolio website which is made in single html page.
+## 1. Project Objective
 
-2) for this i am using GitHub Actions tool to run this CI integration process and which is inbuilt in the github so github action is easy to perform the CI(continous integration).
+In this project, I am learning how to create and implement a CI/CD pipeline using my existing portfolio website.
 
-3) I will update all the steps in this file which i follow to create the CI/CD pipeline.
+My portfolio is a static website created using a single HTML file containing the website's HTML, CSS, and JavaScript.
 
-# what is CI(continous integration) ?
+I created a separate GitHub repository for learning CI/CD so that I can understand the complete process without involving my existing Vercel deployment.
 
-1) while developing any project what we do is  connect the project files to the github using the git and we have to create the repository on the github and connect the repository url using the git in the terminal of the project then we perform the git command and push the code to the github .
 
-  # common command like 
+## 2. Tool Used
 
-  • git init ,
-  • git add . ,
-  • git commit -m "first commit" ,
-  • git remote add origin "url" ,
-  • git branch -M main ,
-  • git push -u origin main 
+For implementing CI/CD, I am using **GitHub Actions**.
 
-2) after we push the code to the github then we have to manually build our code before we deploy the code to the production means we cannot direct push the changes and the code to the live project.
+GitHub Actions is a GitHub feature that allows us to automate workflows whenever specific events happen in our repository, such as pushing code or creating a pull request.
 
-3) after the build is success full then we can do the deployment and the code is deploy to the live  project but this whole process is manaully done and takes time and here we can make this process automate using the two process CI(continous integration which will build our code and check all the test case which we have set and if all the test case are pass by the code then only hte code sent ot the deployment if the test case fail then it shows error in the github which is easy for us to look specifically where the integration error has happen so no need manually build and check the test case ).
+I will use GitHub Actions to implement both:
 
-4) when the CI (continous integration) part is done it automatically test the code with the test case which we have set and  build the code and then the CD( continous deployment) part comes which automatically when all the test are pass and the code is build the CD deploy the code to the production means to the live project so the compate process ia automated.
+* CI — Continuous Integration
+* CD — Continuous Deployment
 
-5) to perform this process of CI/CD i am the in build tool github action which is used to create THE CI ( continous integration part ) and the CD (continous deployment part)
+
+# What is CI (Continuous Integration)?
+
+Continuous Integration is a development practice where changes made to a project are automatically checked and validated when they are integrated into the shared code repository.
+
+In a typical development workflow, we connect our local project to a GitHub repository using Git.
+
+Some common Git commands are:
+
+
+git init
+
+git add .
+
+git commit -m "first commit"
+
+git remote add origin "repository-url"
+
+git branch -M main
+
+git push -u origin main
+
+
+After pushing our code to GitHub, we can use GitHub Actions to automatically perform checks on the code.
+
+For example:
+
+
+Developer makes changes
+        ↓
+      git push
+        ↓
+GitHub repository
+        ↓
+GitHub Actions starts
+        ↓
+Run automated checks
+        ↓
+     ┌───────┴───────┐
+     ↓               ↓
+   PASS             FAIL
+     ↓               ↓
+Continue          Show error
+to next step      in GitHub
+
+
+The purpose of CI is to detect problems automatically instead of depending completely on manual checking.
+
+
+
+# What is CD (Continuous Deployment)?
+
+After the CI checks are completed successfully, we can automate the deployment of the application.
+
+This is where Continuous Deployment comes into the process.
+
+The overall flow becomes:
+
+
+Code Change
+     ↓
+   Git Push
+     ↓
+GitHub Repository
+     ↓
+GitHub Actions
+     ↓
+      CI
+     ↓
+Automated Checks
+     ↓
+   ✅ Passed
+     ↓
+      CD
+     ↓
+Automatic Deployment
+     ↓
+Live Website
+
+If the CI checks fail:
+
+Code Change
+     ↓
+   Git Push
+     ↓
+GitHub Actions
+     ↓
+CI Checks
+     ↓
+   ❌ Failed
+     ↓
+Deployment is not performed
+
+
+This helps prevent a change that has failed the required checks from being deployed.
+
+
+
+# GitHub Actions
+
+GitHub Actions is the automation tool I am using to implement the CI/CD process.
+
+The workflow configuration will be stored inside:
+
+
+.github/
+└── workflows/
+
+
+The workflow file will define:
+
+* When the workflow should run
+* What environment should be used
+* What checks should be performed
+* What happens when the checks succeed
+* What happens when the checks fail
+* How the deployment is performed
+
+
+
+# My CI/CD Implementation
+
+I will document the implementation step-by-step below as I build the pipeline.
+
+### Step 1 — Create the repository
+
+Created a separate GitHub repository for learning CI/CD.
+
+### Step 2 — Add the portfolio
+
+Added my existing static HTML portfolio to the repository.
+
+### Step 3 — Configure GitHub Actions
+
+Created a GitHub Actions workflow to automatically perform CI checks.
+
+### Step 4 — Test CI
+
+I will make changes to the portfolio and push them to GitHub to verify that the CI workflow runs automatically.
+
+I will also intentionally introduce an error to understand how a failed CI workflow behaves.
+
+### Step 5 — Configure CD
+
+After understanding CI, I will configure automatic deployment.
+
+### Step 6 — Test the complete CI/CD pipeline
+
+The final workflow will be:
+
+Change portfolio
+       ↓
+    git push
+       ↓
+GitHub Actions
+       ↓
+      CI
+       ↓
+Automated checks
+       ↓
+    ✅ Passed
+       ↓
+      CD
+       ↓
+Automatic deployment
+       ↓
+Live portfolio
+
+I will document each step, configuration, error, and solution in this README.
