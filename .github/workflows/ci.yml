@@ -15,7 +15,7 @@ jobs:
 
       - name: Check index.html exists
         run: |
-          test -f index.html
+          test -f AJAY-Portfolio/index.html
           echo "index.html exists"
 
      
