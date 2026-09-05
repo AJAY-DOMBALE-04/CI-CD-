@@ -19,6 +19,6 @@ jobs:
           echo "index.html exists"
 
       - name: Validate HTML
-        uses: Cyb3r-Jak3/html5validator-action@7.2.0
+        uses: Cyb3r-Jak3/html5validator
         with:
           root: .
