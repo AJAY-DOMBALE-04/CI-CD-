@@ -14,8 +14,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check index.html exists
-        run: |
-          test -f AJAY-Portfolio/index.html
-          echo "index.html exists"
+  working-directory: ./AJAY-Portfolio
+  run: |
+    test -f index.html
+    echo "index.html exists"
 
      
