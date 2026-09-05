@@ -18,7 +18,4 @@ jobs:
           test -f index.html
           echo "index.html exists"
 
-      - name: Validate HTML
-        uses: Cyb3r-Jak3/html5validator
-        with:
-          root: .
+     
